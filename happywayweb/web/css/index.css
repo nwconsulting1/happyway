@@ -1,0 +1,39 @@
+/* CSS ESPECÍFICO DA INDEX */
+@charset "utf-8";
+
+body{
+  background: url("background.jpg") !important;
+}
+
+#login {
+    position: relative;
+    background: url("back-cont.png");
+    border-color: #079897 !important;
+    border-bottom: 0px !important;
+    border-left: 0px !important;
+    border-right: 0px !important;
+    border-radius: 0px !important;
+    max-width: 400px;
+    padding: 2%;
+    top: 20%;
+    margin: auto;
+    z-index: 1;
+  }
+
+  .blue-icon{
+  color: #079897;
+ }
+
+  #login img{
+  	width: 60%;
+  }
+
+  #credits {
+  	position: relative;
+  	top: 20%;
+  	z-index: 1;
+  }
+  
+  #logout{
+	float: right ;
+  }
