@@ -6,8 +6,9 @@ h4{
 	color: #079897;
 }
 
-body{
-  background: url("background2.jpg") !important;
+html{
+  background-image: url("../images/background2.jpg") !important;
+  /*background-color: #000000 !important;*/ 
 }
 
 hr{
@@ -15,7 +16,7 @@ hr{
 }
 #content{
 	position: relative;
-	background: url("back-cont.png");
+	background: url("../images/back-cont.png");
 	margin: auto;
 	top: -20px !important;
 	padding-bottom: 1%;

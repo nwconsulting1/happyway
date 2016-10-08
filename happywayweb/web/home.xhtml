@@ -1,71 +1,72 @@
-
-<html>
-<head>
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
 
 <title> CRM HappyWay </title>
 
-<meta charset="UTF-8">
-
-<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
-<link rel="stylesheet" type="text/css" href="css/cssdefault.css">
-<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="resources/bootstrap/css/bootstrap.css" />
+<link rel="stylesheet" type="text/css" href="resources/css/cssdefault.css" />
+<link rel="stylesheet" type="text/css" href="resources/bootstrap/css/bootstrap.min.css" />
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 
-</head>
+</h:head>
 
-<body>
+    <h:body>
 
 <nav class="navbar navbar-inverse">
   <div class="container">
-  	<p class="navbar-text"><img src="images/logo-head.png" style="margin: auto;"></p>
+      <p class="navbar-text"><img src="resources/images/logo-head.png" alt="oi" style="margin: auto;" /></p>
 	
 	<ul class="nav navbar-nav">
-		<li class="active"><a href="home.html">Home <span class="sr-only">(current)</span></a></li>
-    <li><a href="produtos.html">Produtos</a></li>
-		<li><a href="clientes.html">Clientes</a></li>
-		<li><a href="vendas.html">Vendas</a></li>
+		<li class="active"><a href="home.xhtml">Home <span class="sr-only">(current)</span></a></li>
+    <li><a href="produtos.xhtml">Produtos</a></li>
+		<li><a href="clientes.xhtml">Clientes</a></li>
+		<li><a href="vendas.xhtml">Vendas</a></li>
 	</ul>
 
-	<a href="index.html"><button type="button" class="btn btn-default navbar-btn">Log Out</button></a>
+	<a href="index.xhtml"><button type="button" class="btn btn-default navbar-btn">Log Out</button></a>
   </div>
 </nav>
 
 
-<div id="content"class="container">
+<div id="content" class="container">
 
 	<h3>Olá, Lucas!</h3>
 	<p>Seja bem-vindo ao CRM HappyWay. Abaixo você encontra dados de resumo de seus produtos, vendas e campanhas!</p>
-	<hr>
+	<hr />
 
   <div id="charts" class="col-sm-12">
 
     <div class="col-sm-3">
       <div class="div-black height-110">
-      <h3><center>15 <span class="glyphicon glyphicon-bell blue-icon" aria-hidden="true"></span></h3>
-      <p class="chart-text">PRODUTOS VENDIDOS NOS ÚLTIMOS 7 DIAS</p></center>
+          <h3><center>15 <span class="glyphicon glyphicon-bell blue-icon" aria-hidden="true"></span></center></h3>
+          <center><p class="chart-text">PRODUTOS VENDIDOS NOS ÚLTIMOS 7 DIAS</p></center>
       </div>
     </div>
     
 
     <div class="col-sm-3">
       <div class="div-black height-110">
-      <h3><center>7 <span class="glyphicon glyphicon-user blue-icon" aria-hidden="true"></span></h3>
-      <p class="chart-text">NOVOS CLIENTES NOS ÚLTIMOS 7 DIAS</p></center>
+          <h3><center>7 <span class="glyphicon glyphicon-user blue-icon" aria-hidden="true"></span></center></h3>
+          <center><p class="chart-text">NOVOS CLIENTES NOS ÚLTIMOS 7 DIAS</p></center>
       </div>
     </div>
 
     <div class="col-sm-3">
       <div class="div-black height-110">
-      <h3><center>5 <span class="glyphicon glyphicon-ok blue-icon" aria-hidden="true"></span></h3>
-      <p class="chart-text">CAMPANHAS ATIVAS</p></center>
+          <h3><center>5 <span class="glyphicon glyphicon-ok blue-icon" aria-hidden="true"></span></center></h3>
+          <center><p class="chart-text">CAMPANHAS ATIVAS</p></center>
       </div>
     </div>
 
     <div class="col-sm-3">
       <div class="div-black height-110">
-      <h3><center>9 <span class="glyphicon glyphicon-plus blue-icon" aria-hidden="true"></span></h3>
-      <p class="chart-text">NOVOS PRODUTOS</p></center>
+          <h3><center>9 <span class="glyphicon glyphicon-plus blue-icon" aria-hidden="true"></span></center></h3>
+          <center><p class="chart-text">NOVOS PRODUTOS</p></center>
       </div>
     </div>
 
@@ -74,9 +75,9 @@
 
   <div class="col-sm-9">
       <div>
-        <br>
+        <br />
         <h4><span class="glyphicon glyphicon-signal blue-icon" aria-hidden="true"></span>  ACOMPANHAMENTO DE METAS MENSAIS</h4>
-        <hr>
+        <hr />
       <iframe width="100%" height="100%" frameborder="0" src="graphics/Doc1.htm"></iframe>
     </div>
     </div>
@@ -117,5 +118,5 @@
 <center><p style="color:gray;font-size:10px;">HappyWay @ 2016 - Desenvolvido por New Wave</p></center>
 </div>
 
-</body>
+</h:body>
 </html>
