@@ -3,15 +3,21 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package modelo;
+package model;
+
+import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 /**
  *
  * @author Lucas de Andrade
  */
-public class Produto {
+@Entity
+public class Produto implements Serializable {
     
     //Atributos
+    @Id
     private int codigo;
     private String nome;
     private int quantidade;
@@ -19,73 +25,65 @@ public class Produto {
     private String faixa_etaria;
     private double valor;
     private String categoria;
-    
-    //Construtor
-    public Produto (int codigo, String nome, int quantidade, String descricao, String faixa_etaria, double valor, String categoria){
-        this.codigo = codigo;
-        this.nome = nome;
-        this.quantidade = quantidade;
-        this.descricao = descricao;
-        this.faixa_etaria = faixa_etaria;
-        this.valor = valor;
-        this.categoria = categoria;
+
+    public Produto() {
     }
-    
-    //Gets
-    public int GetCodigo (){
+
+    public int getCodigo() {
         return codigo;
     }
-    
-    public String GetNome (){
-        return nome;
-    }
-    
-    public int GetQtd (){
-        return quantidade;
-    }
-    
-    public String GetDesc(){
-        return descricao;
-    }
-    
-    public String GetFaixaEtaria (){
-        return faixa_etaria;
-    }
-    
-    public double GetValor (){
-        return valor;
-    }
-    
-    public String GetCategoria (){
-        return categoria;
-    }
-    
-    //Sets
-    public void SetCodigo (int codigo){
+
+    public void setCodigo(int codigo) {
         this.codigo = codigo;
     }
-    
-    public void SetNome (String nome){
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
         this.nome = nome;
     }
-    
-    public void SetQtd (int quantidade){
+
+    public int getQuantidade() {
+        return quantidade;
+    }
+
+    public void setQuantidade(int quantidade) {
         this.quantidade = quantidade;
-    } 
-    
-    public void SetDesc (String descricao){
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
-    
-    public void SetFaixaEtaria (String faixa_etaria){
+
+    public String getFaixa_etaria() {
+        return faixa_etaria;
+    }
+
+    public void setFaixa_etaria(String faixa_etaria) {
         this.faixa_etaria = faixa_etaria;
     }
-    
-    public void SetValor (double valor){
+
+    public double getValor() {
+        return valor;
+    }
+
+    public void setValor(double valor) {
         this.valor = valor;
     }
-    
-    public void SetCategoria (String categoria){
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
         this.categoria = categoria;
     }
+    
+    
 }

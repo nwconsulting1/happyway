@@ -3,145 +3,174 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core">
-<h:head>
+    <h:head>
 
-<title>Produtos</title>
+        <title>Produtos</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" type="text/css" href="resources/bootstrap/css/bootstrap.css"/>
+        <link rel="stylesheet" type="text/css" href="resources/css/cssdefault.css"/>
 
-<link rel="stylesheet" type="text/css" href="resources/bootstrap/css/bootstrap.css"/>
-<link rel="stylesheet" type="text/css" href="resources/css/cssdefault.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="resources/js/produtos.js"></script>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="resources/js/produtos.js"></script>
+    </h:head>
 
-</h:head>
-<h:body>
+    <h:body>
 
-<nav class="navbar navbar-inverse">
-  <div class="container">
-  	<p class="navbar-text"><img src="resources/images/logo-head.png" style="margin: auto;"/></p>
-	
-	<ul class="nav navbar-nav">
-		<li><a href="home.xhtml">Home <span class="sr-only">(current)</span></a></li>
-    <li class="active"><a href="produtos.xhtml">Produtos</a></li>
-		<li><a href="clientes.xhtml">Clientes</a></li>
-		<li><a href="vendas.xhtml">Vendas</a></li>
-	</ul>
+        <nav class="navbar navbar-inverse">
+            <div class="container">
+                <p class="navbar-text"><img src="resources/images/logo-head.png" style="margin: auto;"/></p>
 
-	<a href="index.html"><button type="button" class="btn btn-default navbar-btn ">Log Out</button></a>
-  </div>
-</nav>
+                <ul class="nav navbar-nav">
+                    <li><a href="home.xhtml">Home <span class="sr-only">(current)</span></a></li>
+                    <li class="active"><a href="produtos.xhtml">Produtos</a></li>
+                    <li><a href="clientes.xhtml">Clientes</a></li>
+                    <li><a href="vendas.xhtml">Vendas</a></li>
+                </ul>
 
-
-<div id="content" class="container">
-<br />
+                <a href="index.html"><button type="button" class="btn btn-default navbar-btn ">Log Out</button></a>
+            </div>
+        </nav>
 
 
-  <h4>NOVO PRODUTO <button id="novoprodutodown" class="glyphicon glyphicon-chevron-down blue-icon button-collapse"></button>
-                  <button id="novoprodutoup" class="glyphicon glyphicon-chevron-up blue-icon button-collapse"></button>
-
-  </h4>
-  <hr />
-
-    <div id="produtos">
-
-  <form id="produtosinput" class="form-horizontal">
-  <div class="form-group">
-    <label for="inputProductName" class="col-sm-2 control-label">Nome</label>
-    <div class="col-sm-3">
-      <input type="text" class="form-control" id="inputProductName" placeholder="Exemplo: Bicicleta" />
-    </div>
-
-  <label for="inputProductQtd" class="col-sm-2 control-label">Quantidade</label>
-    <div class="col-sm-3">
-      <input type="text" class="form-control" id="inputProductQtd" placeholder="Exemplo: 5" />
-    </div>  
-  </div>
-
-  <div class="form-group">
-    <label for="inputProductCode" class="col-sm-2 control-label">Código</label>
-    <div class="col-sm-3">
-      <input type="text" class="form-control" id="inputProductCode" placeholder="Exemplo: 00231" />
-    </div>
-
-    <label for="inputProductFaixa" class="col-sm-2 control-label">Faixa Etária</label>
-    <div class="col-sm-3">
-      <input type="text" class="form-control" id="inputProductFaixa" placeholder="Exemplo: 3 anos" />
-    </div> 
-  </div>
-
-  <div class="form-group">
-    <label for="inputProductCategory" class="col-sm-2 control-label">Categoria</label>
-    <div class="col-sm-3">
-      <input type="text" class="form-control" id="inputProductCategory" placeholder="Exemplo: Infantis" />
-    </div>
-
-    <label for="inputProductValue" class="col-sm-2 control-label">Valor</label>
-    <div class="col-sm-3">
-      <input type="text" class="form-control" id="inputProductValue" placeholder="Exemplo: R$ 30,00" />
-    </div> 
-  </div>
-
-  <div class="form-group">
-    <label for="inputProductDescription" class="col-sm-2 control-label">Descrição</label>
-    <div class="col-sm-10">
-      <textarea name="comment" form="usrform" >Enter text here...</textarea>
-    </div> 
-  </div>
-
-  <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-      <button type="submit" class="btn btn-default">Enviar</button>
-    </div>
-  </div>
-</form>
-
-  </div>
-
-  <h4>PRODUTOS</h4>
-  <hr />
-
-  <div id="tabelaProdutos" class="table-responsive">
-
-    <table class="table table-striped table-hover" cellspacing="2px" cellpadding="2px">
-
-      <thead>
-        <tr>
-         <td><strong>Código</strong></td>
-         <td><strong>Nome</strong></td>
-         <td><strong>Descrição</strong></td>
-         <td><strong>Quantidade</strong></td>
-         <td><strong>valor</strong></td>
-        </tr>
-      </thead>
-
-      <tbody>
-       <tr>
-        <td>#1</td>
-        <td>Biciclieta</td>
-        <td>Bicicleta vermelhaney com coisas lindas</td>
-        <td>3</td>
-        <td>R$ 20,00</td>
-       </tr>
-
-       <tr>
-        <td>#2</td>
-        <td>Patinete</td>
-        <td>Patinete feinho</td>
-        <td>1</td>
-        <td>R$ 30,00</td>
-       </tr>
-      </tbody>    
-
-    </table>
-
-  </div>
-
-</div>
-
-<div id="credits">
-<center><p style="color:gray;font-size:10px;">HappyWay @ 2016 - Desenvolvido por New Wave</p></center>
-</div>
+        <div id="content" class="container">
+            <br />
 
 
-</h:body>
+            <h4>NOVO PRODUTO <button id="novoprodutodown" class="glyphicon glyphicon-chevron-down blue-icon button-collapse"></button>
+                <button id="novoprodutoup" class="glyphicon glyphicon-chevron-up blue-icon button-collapse"></button>
+
+            </h4>
+            <hr />
+
+            <div id="produtos">
+
+                <f:view>
+                    <h:form id="produtosinput" class="form-horizontal">
+
+                        <div class="form-group">
+                            <label for="inputProductName" class="col-sm-2 control-label">Nome</label>
+                            <div class="col-sm-3">
+                                <h:inputText value="#{produtoBean.produto.nome}" class="form-control" id="inputProductName"/>
+                            </div>
+
+                            <label for="inputProductQtd" class="col-sm-2 control-label">Quantidade</label>
+                            <div class="col-sm-3">
+                                <h:inputText value="#{produtoBean.produto.quantidade}" class="form-control" id="inputProductQtd" />
+                            </div>  
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputProductCode" class="col-sm-2 control-label">Código</label>
+                            <div class="col-sm-3">
+                                <h:inputText value="#{produtoBean.produto.codigo}" class="form-control" id="inputProductCode" />
+                            </div>
+
+                            <label for="inputProductFaixa" class="col-sm-2 control-label">Faixa Etária</label>
+                            <div class="col-sm-3">
+                                <h:inputText value="#{produtoBean.produto.faixa_etaria}" class="form-control" id="inputProductFaixa" />
+                            </div> 
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputProductCategory" class="col-sm-2 control-label">Categoria</label>
+                            <div class="col-sm-3">
+                                <h:inputText value="#{produtoBean.produto.categoria}" class="form-control" id="inputProductCategory" />
+                            </div>
+
+                            <label for="inputProductValue" class="col-sm-2 control-label">Valor</label>
+                            <div class="col-sm-3">
+                                <h:inputText value="#{produtoBean.produto.valor}" class="form-control" id="inputProductValue" />
+                            </div> 
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputProductDescription" class="col-sm-2 control-label">Descrição</label>
+                            <div class="col-sm-8">
+                                <h:inputTextarea value="#{produtoBean.produto.descricao}" class="form-control" id="inputProductDescription" />
+                            </div> 
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <h:commandLink action="#{produtoBean.salva}" class="btn btn-default">Enviar</h:commandLink>
+                            </div>
+                        </div>
+                    </h:form>
+                </f:view>
+
+
+            </div>
+
+            <h4>PRODUTOS</h4>
+            <hr />
+
+            <div id="tabelaProdutos" class="table-responsive">
+
+                <f:view>
+                    <h:form>
+                        <h:dataTable value="#{produtoBean.produtos}" var="item" class="table table-striped table-hover" cellspacing="2px" cellpadding="2px">
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Código"/>
+                                </f:facet>
+                                <h:outputText value="#{item.codigo}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Nome"/>
+                                </f:facet>
+                                <h:outputText value="#{item.nome}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Quantidade"/>
+                                </f:facet>
+                                <h:outputText value="#{item.quantidade}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Descrição"/>
+                                </f:facet>
+                                <h:outputText value="#{item.descricao}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Faixa Etária"/>
+                                </f:facet>
+                                <h:outputText value="#{item.faixa_etaria}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Valor"/>
+                                </f:facet>
+                                <h:outputText value="#{item.valor}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Categoria"/>
+                                </f:facet>
+                                <h:outputText value="#{item.categoria}"/>
+                            </h:column>
+                        </h:dataTable>
+                    </h:form>
+                </f:view>
+
+
+
+
+
+
+
+            </div>
+
+        </div>
+
+        <div id="credits">
+            <center><p style="color:gray;font-size:10px;">HappyWay @ 2016 - Desenvolvido por New Wave</p></center>
+        </div>
+
+
+    </h:body>
 </html>

@@ -14,7 +14,6 @@ html {
 }
 body {
   margin: 0;
-  background-color: #191919;
   color: #ddd !important;
 }
 
@@ -136,7 +135,8 @@ input[type="text"],
 input[type="phone"],
 input[type="select"],
 input[type="number"],
-input[type="date"]{
+input[type="date"],
+textarea{
   border-bottom-width: 3px !important;
   border-bottom-color: #079897 !important;
   border-radius: 0px !important;
