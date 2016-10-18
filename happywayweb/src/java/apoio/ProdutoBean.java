@@ -6,6 +6,7 @@
 package apoio;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
@@ -37,15 +38,14 @@ public class ProdutoBean {
     }
     
     public List<Produto> getProdutos() {
-        if (this.produtos == null) {
-            EntityManager em = JPAUtil.getEntityManager();
-            Query p = em.createQuery("select p from Produto p",
-                    Produto.class);
-            this.produtos = p.getResultList();
-            em.close();
-        }
         
-        return produtos;
+            EntityManager em = JPAUtil.getEntityManager();
+            Query p = em.createQuery("select p from Produto p");
+            this.produtos = p.getResultList();
+            //em.close();
+        
+        
+        return this.produtos;
     }
     
     public String salva() {
@@ -69,7 +69,7 @@ public class ProdutoBean {
             em.close();
         }
 
-        this.produto = null;
+        this.produto = new Produto();
         return "produtos";
     }
 }
