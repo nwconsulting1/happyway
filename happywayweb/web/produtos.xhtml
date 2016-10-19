@@ -62,22 +62,19 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="inputProductCode" class="col-sm-2 control-label">Código</label>
-                            <div class="col-sm-3">
-                                <h:inputText value="#{produtoBean.produto.codigo}" class="form-control" id="inputProductCode" />
-                            </div>
 
                             <label for="inputProductFaixa" class="col-sm-2 control-label">Faixa Etária</label>
                             <div class="col-sm-3">
                                 <h:inputText value="#{produtoBean.produto.faixa_etaria}" class="form-control" id="inputProductFaixa" />
                             </div> 
-                        </div>
-
-                        <div class="form-group">
+                            
                             <label for="inputProductCategory" class="col-sm-2 control-label">Categoria</label>
                             <div class="col-sm-3">
                                 <h:inputText value="#{produtoBean.produto.categoria}" class="form-control" id="inputProductCategory" />
                             </div>
+                        </div>
+
+                        <div class="form-group">
 
                             <label for="inputProductValue" class="col-sm-2 control-label">Valor</label>
                             <div class="col-sm-3">
@@ -153,6 +150,17 @@
                                 </f:facet>
                                 <h:outputText value="#{item.categoria}"/>
                             </h:column>
+                            <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Ações"/>
+                            </f:facet>
+                            <h:commandLink type="reset" action="#{produtoBean.excluir(item)}" title="Excluir Produto">
+                                Excluir                    
+                            </h:commandLink> |
+                            <h:commandLink action="#{produtoBean.alterar(item)}" title="Alterar Produto">
+                                Editar
+                            </h:commandLink>
+                        </h:column>
                         </h:dataTable>
                     </h:form>
                 </f:view>

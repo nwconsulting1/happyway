@@ -72,4 +72,28 @@ public class ProdutoBean {
         this.produto = new Produto();
         return "produtos";
     }
+    
+    public String alterar(Produto p) {
+        this.produto = p;
+        return "produtos";
+    }
+    
+    public void excluir(Produto p) {
+
+        Integer cod = p.getCodigo();
+        
+        if (cod != null) {
+            EntityManager em = JPAUtil.getEntityManager();
+
+            System.out.println(p.getCodigo() + ", " + p.getNome());
+            em.getTransaction().begin();
+            p = em.merge(p);
+            em.remove(p);
+            em.getTransaction().commit();
+            em.close();
+        }
+
+        this.produto = new Produto();
+
+    }
 }
