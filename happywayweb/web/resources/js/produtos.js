@@ -3,7 +3,8 @@ $(document).ready(function(){
  	console.log('entrou no script');
         
     $("table[id$='produtoDataTable']").DataTable({
-        paging: true
+        paging: true,
+        ordering:  false
     });
         
     var produto = $("input[id$='inputProductCode'").val();
