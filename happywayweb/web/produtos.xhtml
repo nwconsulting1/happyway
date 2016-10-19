@@ -79,7 +79,9 @@
                             <label for="inputProductValue" class="col-sm-2 control-label">Valor</label>
                             <div class="col-sm-3">
                                 <h:inputText value="#{produtoBean.produto.valor}" class="form-control" id="inputProductValue" />
-                            </div> 
+                            </div>
+                            
+                            <h:inputText rendered="false" value="#{produtoBean.produto.codigo}" id="inputProductCode" />
                         </div>
 
                         <div class="form-group">
@@ -154,11 +156,12 @@
                             <f:facet name="header">
                                 <h:outputText value="Ações"/>
                             </f:facet>
-                            <h:commandLink type="reset" action="#{produtoBean.excluir(item)}" title="Excluir Produto">
-                                Excluir                    
-                            </h:commandLink> |
                             <h:commandLink action="#{produtoBean.alterar(item)}" title="Alterar Produto">
-                                Editar
+                                <span class="glyphicon glyphicon-pencil blue-icon" />
+                            </h:commandLink>
+                            <span>&nbsp;</span> 
+                            <h:commandLink type="reset" action="#{produtoBean.excluir(item)}" title="Excluir Produto">
+                                <span class="glyphicon glyphicon-remove" style="color: red;" />                    
                             </h:commandLink>
                         </h:column>
                         </h:dataTable>
