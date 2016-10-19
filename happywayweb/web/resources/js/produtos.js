@@ -1,9 +1,10 @@
 //FUNÇÕES DE ANIMAÇÃO PARA TELA DE PRODUTOS
-
-
-
 $(document).ready(function(){
  	console.log('entrou no script');
+        
+    $("table[id$='produtoDataTable']").DataTable({
+        paging: true
+    });
         
     var produto = $("input[id$='inputProductCode'").val();
     
@@ -31,6 +32,8 @@ $(document).ready(function(){
     	$("#novoprodutodown").show();
     	$("#novoprodutoup").hide();
     });
+    
+    
     
     
 });
