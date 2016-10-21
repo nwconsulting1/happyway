@@ -3,19 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package modelo;
+package model;
 
 import java.io.Serializable;
-import javax.persistence.Basic;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
-import javax.persistence.Table;
-import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
@@ -26,17 +19,13 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class Usuario implements Serializable {
     
     @Id
+    @GeneratedValue
     private Integer id;
     
-    private String user;
+    private String usuario;
     private String senha;
     private String email;
-    
-    //Construtor
-    public Usuario () {
-    }
-    
-    //Gets
+
     public Integer getId() {
         return id;
     }
@@ -44,36 +33,35 @@ public class Usuario implements Serializable {
     public void setId(Integer id) {
         this.id = id;
     }
-    
-    public String GetEmail(){
-        return email;
 
+    public String getUsuario() {
+        return usuario;
     }
-    public String GetSenha () {
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }
+
+    public String getSenha() {
         return senha;
     }
-    
-    public String GetUser () {
-        return user;
+
+    public void setSenha(String senha) {
+        this.senha = senha;
     }
-    
-    //Sets
-    
-    public void SetEmail(String email){
-    
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
         this.email = email;
     }
     
-    
-    public void SetSenha (String senha) {
-        this.senha = senha;
+    //Construtor
+    public Usuario () {
     }
     
-   
-    
-    public void SetUser (String user) {
-        this.user = user;
-    }
     
     
 }

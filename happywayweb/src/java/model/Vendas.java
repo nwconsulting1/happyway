@@ -5,97 +5,100 @@
  */
 package modelo;
 
+import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
 /**
  *
  * @author Lucas de Andrade
  */
-public class Vendas {
+
+@Entity
+public class Vendas implements Serializable{
     
     //Atributos
+    @Id
+    @GeneratedValue
     private int cod_venda;
     private int cod_cliente;
-    private String user;
+    private String usuario;
     private int cod_produto;
     private String estado;
     private String pais;
     private String cidade;
     private double valor;
-    
-    //Constutor
-    public Vendas(int cod_venda, int cod_cliente, String user, int cod_produto, String estado, String pais, String cidade, double valor){
-        this.cod_venda = cod_venda;
-        this.cod_cliente = cod_cliente;
-        this.user = user;
-        this.cod_produto = cod_produto;
-        this.estado = estado;
-        this.pais = pais;
-        this.cidade = cidade;
-        this.valor = valor;
-    }
-    
-    //Gets
-    public int GetCodVenda (){
+
+    public int getCod_venda() {
         return cod_venda;
     }
-    
-    public int GetCodCliente (){
-        return cod_cliente;
-    }
-    
-    public String GetUser (){
-        return user;
-    }
-    
-    public int GetCodProduto (){
-        return cod_produto;
-    }
-    
-    public String GetEstado (){
-        return estado;
-    }
-    
-    public String GetPais (){
-        return pais;
-    }
-    
-    public String GetCidade (){
-        return cidade;
-    }
-    
-    public double GetValor (){
-        return valor;
-    }
-    
-    //Sets
-    public void SetCodVenda (int cod_venda){
+
+    public void setCod_venda(int cod_venda) {
         this.cod_venda = cod_venda;
     }
-    
-    public void SetCodCliente (int cod_cliente){
+
+    public int getCod_cliente() {
+        return cod_cliente;
+    }
+
+    public void setCod_cliente(int cod_cliente) {
         this.cod_cliente = cod_cliente;
     }
-    
-    public void SetUser (String user){
-        this.user = user;
+
+    public String getUsuario() {
+        return usuario;
     }
-    
-    public void SetCodProduto (int cod_produto){
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }
+
+    public int getCod_produto() {
+        return cod_produto;
+    }
+
+    public void setCod_produto(int cod_produto) {
         this.cod_produto = cod_produto;
     }
-    
-    public void SetEstado (String estado){
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
         this.estado = estado;
     }
-    
-    public void SetPais (String pais){
+
+    public String getPais() {
+        return pais;
+    }
+
+    public void setPais(String pais) {
         this.pais = pais;
     }
-    
-    public void SetCidade (String cidade){
+
+    public String getCidade() {
+        return cidade;
+    }
+
+    public void setCidade(String cidade) {
         this.cidade = cidade;
     }
-    
-    public void SetValor (double valor){
+
+    public double getValor() {
+        return valor;
+    }
+
+    public void setValor(double valor) {
         this.valor = valor;
     }
+    
+    public Vendas(){}
+
+    
+    
+    
 }
+    
+    

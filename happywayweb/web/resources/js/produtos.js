@@ -4,7 +4,9 @@ $(document).ready(function(){
         
     $("table[id$='produtoDataTable']").DataTable({
         paging: true,
-        ordering:  false
+        ordering:  false,
+        scrollX: false,
+        responsive: true
     });
         
     var produto = $("input[id$='inputProductCode'").val();
