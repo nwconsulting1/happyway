@@ -29,7 +29,6 @@ hr{
   	z-index: 1;
   }
   
-  
 
  .div-black{
  	padding: 2%;
@@ -63,9 +62,13 @@ hr{
  }
 
  .centered{
-  text-align: center;
+   margin: auto !important;
  }
-
+ 
+ .width-90percent{
+     width: 97%;
+ }
+ 
   @media (min-width: 768px) {
   #content{
   	width: 90%;

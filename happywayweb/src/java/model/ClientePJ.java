@@ -3,46 +3,39 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package modelo;
+package model;
+
+import javax.persistence.Id;
 
 /**
  *
  * @author Lucas de Andrade
  */
+@Entity
 public class ClientePJ extends Cliente {
     
-    //Atributos
+    @Id
     private String CNPJ;
     private String obs;
-   
-    //Construtor 
-    public ClientePJ (int codigo, String nome, String data_cadastro, String estado, String cep, String email, String telefone, String cidade, String pais, String endereco, String CNPJ, String obs){
-        super(codigo, nome, data_cadastro, estado, cep, email, telefone, cidade, pais, endereco);
-        this.CNPJ = CNPJ;
-        this.obs = obs;
-      
-    }
     
-    //Gets
-    public String GetCNPJ (){
+    public ClientePJ(){}
+    
+    public String getCNPJ() {
         return CNPJ;
     }
-    
-    public String GetOBS (){
-        return obs;
-    }
-    
-    //Sets
-    public void SetCNPJ (String CNPJ){
+
+    public void setCNPJ(String CNPJ) {
         this.CNPJ = CNPJ;
     }
-    
-    public void SetOBS (String obs){
+
+    public String getObs() {
+        return obs;
+    }
+
+    //Atributos
+    public void setObs(String obs) {
         this.obs = obs;
     }
-    
    
-    
-    
     
 }

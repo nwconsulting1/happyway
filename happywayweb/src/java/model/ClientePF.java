@@ -3,70 +3,70 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package modelo;
+package model;
+
+import javax.persistence.Id;
 
 /**
  *
  * @author Lucas de Andrade
  */
+@Entity
 public class ClientePF extends Cliente {
     
-    //Atributos
-    private String sexo;
+    @Id
     private String CPF;
     private String RG;
+    private String sexo;
     private String obs;
     private String data_nascimento;
     
     //Construtor
-    public ClientePF (int codigo, String nome, String data_cadastro, String estado, String cep, String email, String telefone, String cidade, String pais, String endereco, String sexo, String CPF, String RG, String obs, String data_nascimento){
-        super(codigo, nome, data_cadastro, estado, cep, email, telefone, cidade, pais, endereco);
-        this.sexo = sexo;
-        this.CPF = CPF;
-        this.RG = RG;
-        this.obs = obs;
-        this.data_nascimento = data_nascimento;
+    public ClientePF (){
+        
     }
     
-    //Gets
-    public String GetSexo(){
+    public String getSexo() {
         return sexo;
     }
-    
-    public String GetCPF(){
-        return CPF;
-    }
-    
-    public String GetRG (){
-        return RG;
-    }
-    
-    public String GetOBS (){
-        return obs;
-    }
-    
-    public String GetDataNasc (){
-        return data_nascimento;
-    }
-    
-    //Sets
-    public void SetSexo (String sexo){
+
+    public void setSexo(String sexo) {
         this.sexo = sexo;
     }
-    
-    public void SetCPF (String CPF) {
+
+    public String getCPF() {
+        return CPF;
+    }
+
+    public void setCPF(String CPF) {
         this.CPF = CPF;
     }
-    
-    public void SetRG (String RG) {
+
+    public String getRG() {
+        return RG;
+    }
+
+    public void setRG(String RG) {
         this.RG = RG;
     }
-    
-    public void SetOBS (String obs){
+
+    public String getObs() {
+        return obs;
+    }
+
+    public void setObs(String obs) {
         this.obs = obs;
     }
-    
-    public void SetDataNasc (String data_nascimento){
+
+    public String getData_nascimento() {
+        return data_nascimento;
+    }
+
+    //Atributos
+    public void setData_nascimento(String data_nascimento) {
         this.data_nascimento = data_nascimento;
     }
+   
+    
+    
 }

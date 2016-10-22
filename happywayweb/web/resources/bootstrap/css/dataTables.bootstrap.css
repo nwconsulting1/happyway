@@ -1,9 +1,7 @@
 table.dataTable {
   clear: both;
-  margin: auto !important;
-  /*margin-top: 6px !important;
-  margin-bottom: 6px !important;*/
-  max-width: none !important;
+  margin-top: 6px !important;
+  margin-bottom: 6px !important;
   border-collapse: separate !important;
 }
 table.dataTable td,

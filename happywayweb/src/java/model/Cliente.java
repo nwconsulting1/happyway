@@ -3,16 +3,24 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package modelo;
+package model;
+
 import java.util.Scanner;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
 /**
  *
  * @author Lucas de Andrade
  */
+@Entity
 public class Cliente {
-    Scanner input = new Scanner(System.in);
+
+    //Scanner input = new Scanner(System.in);
     
-    //Atributos
+    @Id
+    @GeneratedValue
     private int codigo;
     private String nome;
     private String data_cadastro;
@@ -23,100 +31,90 @@ public class Cliente {
     private String cidade;
     private String pais;
     private String endereco;
-    
-    //Construtor
-    public Cliente (int codigo, String nome, String data_cadastro, String estado, String cep, String email, String telefone, String cidade, String pais, String endereco){
-        this.codigo = codigo;
-        this.nome = nome;
-        this.data_cadastro = data_cadastro;
-        this.estado = estado;
-        this.cep = cep;
-        this.email = email;
-        this.telefone = telefone;
-        this.cidade = cidade;
-        this.pais = pais;
-        this.endereco = endereco;
+
+//Construtor
+    public Cliente() {
+
     }
-    
-    //Gets
-    public int GetCodigo (){
+
+    public int getCodigo() {
         return codigo;
     }
-    
-    public String GetNome (){
-        return nome;
-    }
-    
-    public String GetDataCadastro () {
-        return data_cadastro;
-    }
-    
-    public String GetEstado (){
-        return estado;
-    }
-    
-    public String GetCEP (){
-        return cep;
-    }
-    
-    public String GetEmail (){
-        return email;
-    }
-    
-    public String GetTelefone (){
-        return telefone;
-    }
-    
-    public String GetCidade (){
-        return cidade;
-    }
-    
-    public String GetPais (){
-        return pais;
-    }
-    
-    public String GetEndereco (){
-        return endereco;
-    }
-    
-    //Sets
-    public void SetCodigo (int codigo){
+
+    public void setCodigo(int codigo) {
         this.codigo = codigo;
     }
-    
-    public void SetNome (String nome){
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
         this.nome = nome;
     }
-    
-    public void SetDataCadastro (String data_cadastro){
+
+    public String getData_cadastro() {
+        return data_cadastro;
+    }
+
+    public void setData_cadastro(String data_cadastro) {
         this.data_cadastro = data_cadastro;
     }
-    
-    public void SetEstado (String estado){
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
         this.estado = estado;
     }
-    
-    public void SetCEP (String cep){
+
+    public String getCep() {
+        return cep;
+    }
+
+    public void setCep(String cep) {
         this.cep = cep;
     }
-    
-    public void SetEmail (String email){
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
         this.email = email;
     }
-    
-    public void SetTelefone (String telefone){
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
-    
-    public void SetCidade (String cidade){
+
+    public String getCidade() {
+        return cidade;
+    }
+
+    public void setCidade(String cidade) {
         this.cidade = cidade;
     }
-    
-    public void SetPais (String pais){
+
+    public String getPais() {
+        return pais;
+    }
+
+    public void setPais(String pais) {
         this.pais = pais;
     }
-    
-    public void SetEndereco (String endereco){
+
+    public String getEndereco() {
+        return endereco;
+    }
+
+    //Atributos
+    public void setEndereco(String endereco) {
         this.endereco = endereco;
     }
 }
