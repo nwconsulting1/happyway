@@ -95,4 +95,11 @@ public class UsuarioBean {
         this.usuario = new Usuario();
 
     }
+    
+    public String entra(){
+        
+        
+        return "home";
+    
+    }
 }

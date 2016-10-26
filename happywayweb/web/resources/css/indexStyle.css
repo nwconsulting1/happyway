@@ -1,13 +1,14 @@
 /* CSS ESPECÍFICO DA INDEX */
-@charset "utf-8";
 
-body{
-  background: url("background.jpg") !important;
+
+html{
+  background-image: url("../images/background.jpg") !important;
+  /*background-color: #000000 !important;*/ 
 }
 
 #login {
-    position: relative;
-    background: url("back-cont.png");
+    position: absolute;
+    background: url("../images/back-cont.png") !important;
     border-color: #079897 !important;
     border-bottom: 0px !important;
     border-left: 0px !important;
@@ -15,7 +16,6 @@ body{
     border-radius: 0px !important;
     max-width: 400px;
     padding: 2%;
-    top: 20%;
     margin: auto;
     z-index: 1;
   }
@@ -30,7 +30,7 @@ body{
 
   #credits {
   	position: relative;
-  	top: 20%;
+  	top: auto;
   	z-index: 1;
   }
   

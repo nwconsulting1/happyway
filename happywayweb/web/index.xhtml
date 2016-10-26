@@ -1,19 +1,23 @@
-<html>
-<head>
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
 
 <title> CRM HappyWay </title>
 
-<meta charset="UTF-8">
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" type="text/css" href="resources/bootstrap/css/bootstrap.css"/>
+        <link rel="stylesheet" type="text/css" href="resources/css/indexStyle.css"/>
 
-<link rel="stylesheet" type="text/css" href="resources/bootstrap/css/bootstrap.css">
-<link rel="stylesheet" type="text/css" href="resources/css/index.css">
-<link rel="stylesheet" type="text/css" href="resources/bootstrap/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="resources/js/index.js"></script>
 
-<script src="resources/js/index.js"></script>
+</h:head>
 
-</head>
-
-<body>
+<h:body>
 
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container">
@@ -22,24 +26,26 @@
 </nav>
 
 <div id="login" class="panel panel-default">
+    <f:view>
 	<center>
-	<img src="resources/images/logo-login.png">
+	<img src="resources/images/logo-login.png" />
 	<h3>Login</h3>
-
+        <h:form>
 	<div class="input-group input-group-lg">
   		<span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-user blue-icon" aria-hidden="true"></span></span>
-  		<input type="text" onclick="showMessage()" class="form-control" placeholder="Usuário" aria-describedby="sizing-addon1">
+                <h:inputText value="#{usuarioBean.usuario.usuario}" onclick="showMessage()" class="form-control" />
 	</div>
 	<br/>
 	<div class="input-group input-group-lg">
   		<span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-asterisk blue-icon" aria-hidden="true"></span></span>
-  		<input type="password" class="form-control" pattern=".{6,}" title="Six or more characters" placeholder="Senha" aria-describedby="sizing-addon1">
+                <h:inputSecret value="#{usuarioBean.usuario.senha}" class="form-control" title="Six or more characters" />
 	</div>
 	<br/>
-
-	<a href="home.xhtml"><button type="button" class="btn btn-default">Entrar</button></a>
-
-</center>
+        
+        <h:commandLink action="#{usuarioBean.entra}" class="btn btn-default">Entrar</h:commandLink>
+        </h:form>
+        </center>
+    </f:view>
 </div>
 
 <div id="credits">
@@ -50,5 +56,5 @@
 
 
 
-</body>
+</h:body>
 </html>
