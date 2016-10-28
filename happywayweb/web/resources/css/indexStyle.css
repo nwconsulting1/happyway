@@ -7,16 +7,17 @@ html{
 }
 
 #login {
-    position: absolute;
+    position: relative;
     background: url("../images/back-cont.png") !important;
     border-color: #079897 !important;
     border-bottom: 0px !important;
     border-left: 0px !important;
     border-right: 0px !important;
     border-radius: 0px !important;
-    max-width: 400px;
-    padding: 2%;
     margin: auto;
+    max-width: 400px;
+    top: 500px;
+    padding: 2%;
     z-index: 1;
   }
 

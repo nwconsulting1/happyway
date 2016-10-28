@@ -23,7 +23,7 @@ import model.ClientePJ;
 
 @ManagedBean
 @SessionScoped
-public class ClientePJBean implements Serializable {
+public class ClientePJBean {
     
     private ClientePJ clientePJ = new ClientePJ();
     private List<ClientePJ> clientesPJ = new ArrayList<>();

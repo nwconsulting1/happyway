@@ -4,6 +4,15 @@
 
 $(document).ready(function(){
  	console.log('entrou no script');
+        
+        $("table[id$='clientePFdataTable']").DataTable({
+        paging: true,
+        ordering: false,
+        scrollX: false,
+        scrollY: false,
+        responsive: true
+        
+    });
 
     $("#clientes").hide();
     $("#novaclienteup").hide();

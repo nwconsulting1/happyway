@@ -5,6 +5,7 @@
  */
 package model;
 
+import java.io.Serializable;
 import javax.persistence.Id;
 
 /**
@@ -14,7 +15,6 @@ import javax.persistence.Id;
 @Entity
 public class ClientePJ extends Cliente {
     
-    @Id
     private String CNPJ;
     private String obs;
     

@@ -5,17 +5,21 @@
  */
 package model;
 
+import java.io.Serializable;
 import java.util.Scanner;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 
 /**
  *
  * @author Lucas de Andrade
  */
 @Entity
-public class Cliente {
+@Inheritance(strategy = InheritanceType.JOINED)
+public abstract class Cliente implements Serializable {
 
     //Scanner input = new Scanner(System.in);
     

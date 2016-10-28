@@ -21,7 +21,7 @@ import model.ClientePF;
 
 @ManagedBean
 @SessionScoped
-public class ClientePFBean implements Serializable {
+public class ClientePFBean {
     
     private ClientePF clientePF = new ClientePF();
     private List<ClientePF> clientesPF = new ArrayList<>();
@@ -40,12 +40,12 @@ public class ClientePFBean implements Serializable {
     public List<ClientePF> getClientesPF() {
         
             EntityManager em = JPAUtil.getEntityManager();
-            Query cpf = em.createQuery("select cpf from ClientePF cpf");
+            Query cpf = em.createQuery("select c from ClientePF c");
             this.clientesPF = cpf.getResultList();
-            //em.close();
+            em.close();
         
         
-        return this.clientesPF;
+        return clientesPF;
     }
     
     public String salva() {

@@ -5,7 +5,6 @@
  */
 package model;
 
-import javax.persistence.Id;
 
 /**
  *
@@ -14,7 +13,6 @@ import javax.persistence.Id;
 @Entity
 public class ClientePF extends Cliente {
     
-    @Id
     private String CPF;
     private String RG;
     private String sexo;
