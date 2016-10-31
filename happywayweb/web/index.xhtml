@@ -30,7 +30,8 @@
 	<center>
 	<img src="resources/images/logo-login.png" />
 	<h3>Login</h3>
-        <h:form>
+        <h:form id="loginForm">
+        <h:messages styleClass="alert alert-danger" />
 	<div class="input-group input-group-lg">
   		<span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-user blue-icon" aria-hidden="true"></span></span>
                 <h:inputText value="#{usuarioBean.usuario.usuario}" onclick="showMessage()" class="form-control" />

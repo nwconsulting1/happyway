@@ -25,6 +25,21 @@ public class ProdutoBean {
     
     private Produto produto = new Produto();
     private List<Produto> produtos = new ArrayList<>();
+    private long total;
+
+
+    public long getTotal() {
+        
+        EntityManager em = JPAUtil.getEntityManager();
+        Query p = em.createQuery("select count(p) from Produto p");
+        this.total = (long)p.getSingleResult();
+        
+        return this.total;
+    }
+
+    public void setTotal(int total) {
+        this.total = total;
+    }
     
     public ProdutoBean(){
     }

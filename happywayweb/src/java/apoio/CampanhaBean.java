@@ -24,6 +24,18 @@ public class CampanhaBean {
     
     private Campanha campanha = new Campanha();
     private List<Campanha> campanhas = new ArrayList<>();
+    private long total;
+    
+    public long getTotal() {
+    
+        EntityManager em = JPAUtil.getEntityManager();
+        Query p = em.createQuery("select count(c) from Campanha c");
+        this.total = (long)p.getSingleResult();
+        
+        return this.total;
+            
+    }
+    
     
     public CampanhaBean(){
     }

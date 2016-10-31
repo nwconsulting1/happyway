@@ -15,8 +15,8 @@ html{
     border-right: 0px !important;
     border-radius: 0px !important;
     margin: auto;
+    top: 110px;
     max-width: 400px;
-    top: 500px;
     padding: 2%;
     z-index: 1;
   }
@@ -31,7 +31,7 @@ html{
 
   #credits {
   	position: relative;
-  	top: auto;
+  	top: 110px;
   	z-index: 1;
   }
   

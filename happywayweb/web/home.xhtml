@@ -43,8 +43,8 @@
 
     <div class="col-sm-3">
       <div class="div-black height-110">
-          <h3><center>15 <span class="glyphicon glyphicon-bell blue-icon" aria-hidden="true"></span></center></h3>
-          <center><p class="chart-text">PRODUTOS VENDIDOS NOS ÚLTIMOS 7 DIAS</p></center>
+          <h3><center><h:outputText value="#{vendasBean.total}" /> <span class="glyphicon glyphicon-bell blue-icon" aria-hidden="true"></span></center></h3>
+          <center><p class="chart-text">VENDAS</p></center>
       </div>
     </div>
     
@@ -52,21 +52,21 @@
     <div class="col-sm-3">
       <div class="div-black height-110">
           <h3><center>7 <span class="glyphicon glyphicon-user blue-icon" aria-hidden="true"></span></center></h3>
-          <center><p class="chart-text">NOVOS CLIENTES NOS ÚLTIMOS 7 DIAS</p></center>
+          <center><p class="chart-text">CLIENTES</p></center>
       </div>
     </div>
 
     <div class="col-sm-3">
       <div class="div-black height-110">
-          <h3><center>5 <span class="glyphicon glyphicon-ok blue-icon" aria-hidden="true"></span></center></h3>
+          <h3><center><!-- <h:outputText value="{campanhaBean.total}" /> -->0 <span class="glyphicon glyphicon-ok blue-icon" aria-hidden="true"></span></center></h3>
           <center><p class="chart-text">CAMPANHAS ATIVAS</p></center>
       </div>
     </div>
 
     <div class="col-sm-3">
       <div class="div-black height-110">
-          <h3><center>9 <span class="glyphicon glyphicon-plus blue-icon" aria-hidden="true"></span></center></h3>
-          <center><p class="chart-text">NOVOS PRODUTOS</p></center>
+          <h3><center><h:outputText value="#{produtoBean.total}" /> <span class="glyphicon glyphicon-plus blue-icon" aria-hidden="true"></span></center></h3>
+          <center><p class="chart-text">PRODUTOS</p></center>
       </div>
     </div>
 

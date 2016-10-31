@@ -24,6 +24,18 @@ public class VendasBean {
     
     private Vendas venda = new Vendas();
     private List<Vendas> vendas = new ArrayList<>();
+    private long total;
+    
+    public long getTotal() {
+        
+        EntityManager em = JPAUtil.getEntityManager();
+        Query p = em.createQuery("select count(v) from Vendas v");
+        this.total = (long)p.getSingleResult();
+        
+        return this.total;
+        
+    }
+    
     
     public VendasBean(){
     }

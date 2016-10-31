@@ -7,8 +7,10 @@ package apoio;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 import model.Usuario;
@@ -79,7 +81,7 @@ public class UsuarioBean {
     
     public void excluir(Usuario u) {
 
-        Integer cod = u.getId();
+        String cod = u.getId();
         
         if (cod != null) {
             EntityManager em = JPAUtil.getEntityManager();
@@ -98,8 +100,30 @@ public class UsuarioBean {
     
     public String entra(){
         
+       String response = null;
         
-        return "home";
+        EntityManager em = JPAUtil.getEntityManager();
+        try {
+            // Inicia uma transação com o banco de dados.
+            em.getTransaction().begin();
+            Usuario u = em.find(Usuario.class, usuario.getUsuario());
+            // Verifica se a pessoa ainda não está salva no banco de dados.
+            if (u != null) {
+                
+                if(usuario.getSenha().equals(u.getSenha())){
+                    response = "home";
+                }
+                
+            } else {
+                
+                FacesContext.getCurrentInstance().addMessage("loginForm", new FacesMessage("Usuário ou senha incorretos"));
+                
+            }
+        } finally {
+            em.close();
+        }
+        
+        return response;
     
     }
 }
