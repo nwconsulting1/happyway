@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+
+        <title>Vendas</title>
+
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" type="text/css" href="resources/bootstrap/css/bootstrap.css"/>
+        <link rel="stylesheet" type="text/css" href="resources/css/cssdefault.css"/>
+
+        <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>-->
+
+        <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.js" />
+        <!--<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.css" />-->
+
+        <link rel="stylesheet" type="text/css" href="resources/bootstrap/css/dataTables.bootstrap.css"/>
+        <!--<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" />-->
+        <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js" />
+
+        <script src="resources/js/vendas.js"></script>
+
+    </h:head>
+    <h:body>
+
+
+        <nav class="navbar navbar-inverse">
+            <div class="container">
+                <p class="navbar-text"><img src="resources/images/logo-head.png" style="margin: auto;" /></p>
+
+                <ul class="nav navbar-nav">
+                    <li><a href="home.xhtml">Home <span class="sr-only">(current)</span></a></li>
+                    <li><a href="produtos.xhtml">Produtos</a></li>
+                    <li><a href="clientes.xhtml">Clientes</a></li>
+                    <li ><a href="vendas.xhtml">Vendas</a></li>
+                    <li class="active"><a href="vendaswizard.xhtml">Nova Venda</a></li>
+                </ul>
+
+                <a href="index.xhtml"><button type="button" class="btn btn-default navbar-btn">Log Out</button></a>
+            </div>
+        </nav>
+
+
+        <div id="content" class="container">
+
+            <br/>
+
+            <h4>NOVA VENDA 
+            </h4>
+            <hr/>
+                    <!--<h:form id="vendasinput" class="form-horizontal">-->
+                        
+                        <div id="welcome">
+                            <center>
+                                <h3>Olá! Seja bem-vindo(a) ao fluxo inteligente de vendas!</h3>
+                                <p>Aqui você pode criar uma nova venda seguindo poucos passos. :)</p>
+                            
+                            
+                            <br/>
+                            <p>Escolha o tipo de cliente que deseja realizar a venda:</p>
+                            
+                            </center>
+                        </div>
+                        
+                        <h:panelGrid columns="3" cellpadding="5" cellspacing="5px" >
+                            <p:commandLink value="Cliente PF" class="btn btn-default navbar-btn" type="button" onclick="PF('dlg1').show();" />
+
+                            <p:commandLink value="Cliente PJ" class="btn btn-default navbar-btn" type="button" onclick="PF('dlg2').show();" />
+
+                        </h:panelGrid>
+
+                        
+
+                        <p:dialog header="Modal Dialog" widgetVar="dlg1" modal="true" height="100">
+                            <h:outputText value="This is a Modal Dialog." />
+                        </p:dialog>   
+
+                        <p:dialog header="Effects" modal="true" widgetVar="dlg2" height="100">
+                            <h:outputText value="This dialog has nice effects." />
+                        </p:dialog>
+                        
+                    <!--</h:form>-->
+
+            </div>
+
+        <div id="credits">
+            <center><p style="color:gray;font-size:10px;">HappyWay @ 2016 - Desenvolvido por New Wave</p></center>
+        </div>
+
+
+    </h:body>
+</html>

@@ -12,7 +12,7 @@ $(document).ready(function(){
         responsive: true
     });
 
-    $("#vendas").hide();
+    //$("#vendas").hide();
     $("#novavendaup").hide();
 
     $("#novavendadown").click(function(){

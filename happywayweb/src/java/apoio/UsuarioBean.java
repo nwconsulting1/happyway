@@ -19,36 +19,34 @@ import model.Usuario;
  *
  * @author Lucas de Andrade
  */
-
 @ManagedBean
 @SessionScoped
 public class UsuarioBean {
-    
+
     private Usuario usuario = new Usuario();
     private List<Usuario> usuarios = new ArrayList<>();
-    
-    public UsuarioBean(){
+
+    public UsuarioBean() {
     }
-    
-    public Usuario getUsuario(){
+
+    public Usuario getUsuario() {
         return usuario;
     }
-    
-    public void setUsuario(Usuario usuario){
+
+    public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
-    
+
     public List<Usuario> getUsuarios() {
-            
-            EntityManager em = JPAUtil.getEntityManager();
-            Query u = em.createQuery("select u from Usuario u");
-            this.usuarios = u.getResultList();
-            //em.close();
-        
-        
+
+        EntityManager em = JPAUtil.getEntityManager();
+        Query u = em.createQuery("select u from Usuario u");
+        this.usuarios = u.getResultList();
+        //em.close();
+
         return this.usuarios;
     }
-    
+
     public String salva() {
 
         EntityManager em = JPAUtil.getEntityManager();
@@ -73,16 +71,16 @@ public class UsuarioBean {
         this.usuario = new Usuario();
         return "usuario";
     }
-    
+
     public String alterar(Usuario u) {
         this.usuario = u;
         return "usuario";
     }
-    
+
     public void excluir(Usuario u) {
 
         String cod = u.getId();
-        
+
         if (cod != null) {
             EntityManager em = JPAUtil.getEntityManager();
 
@@ -97,33 +95,32 @@ public class UsuarioBean {
         this.usuario = new Usuario();
 
     }
-    
-    public String entra(){
-        
-       String response = null;
-        
+
+    public String entra() {
+
+        String response = null;
+
+        Usuario toLogin;
+
         EntityManager em = JPAUtil.getEntityManager();
-        try {
-            // Inicia uma transação com o banco de dados.
-            em.getTransaction().begin();
-            Usuario u = em.find(Usuario.class, usuario.getUsuario());
-            // Verifica se a pessoa ainda não está salva no banco de dados.
-            if (u != null) {
-                
-                if(usuario.getSenha().equals(u.getSenha())){
-                    response = "home";
-                }
-                
+        Query u = em.createQuery("SELECT u FROM Usuario u WHERE u.usuario = :user AND u.senha = :senha")
+                .setParameter("user", usuario.getUsuario())
+                .setParameter("senha", usuario.getSenha());
+
+        if (u.getResultList().size() > 0) {
+            toLogin = (Usuario) u.getSingleResult();
+
+            if (toLogin != null) {
+                response = "home";
             } else {
-                
                 FacesContext.getCurrentInstance().addMessage("loginForm", new FacesMessage("Usuário ou senha incorretos"));
-                
             }
-        } finally {
-            em.close();
+        } else{
+            FacesContext.getCurrentInstance().addMessage("loginForm", new FacesMessage("Usuário ou senha incorretos"));
         }
-        
+
         return response;
-    
+
     }
+
 }

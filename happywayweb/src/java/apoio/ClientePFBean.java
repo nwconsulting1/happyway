@@ -40,8 +40,8 @@ public class ClientePFBean {
     public List<ClientePF> getClientesPF() {
         
             EntityManager em = JPAUtil.getEntityManager();
-            Query cpf = em.createQuery("select c from ClientePF c");
-            this.clientesPF = cpf.getResultList();
+            Query q = em.createQuery("select c from ClientePF c");
+            this.clientesPF = q.getResultList();
             em.close();
         
         

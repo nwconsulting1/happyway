@@ -36,6 +36,7 @@
                     <li><a href="produtos.xhtml">Produtos</a></li>
                     <li><a href="clientes.xhtml">Clientes</a></li>
                     <li class="active"><a href="vendas.xhtml">Vendas</a></li>
+                    <li><a href="vendaswizard.xhtml">Nova Venda</a></li>
                 </ul>
 
                 <a href="index.xhtml"><button type="button" class="btn btn-default navbar-btn">Log Out</button></a>
@@ -44,63 +45,7 @@
 
 
         <div id="content" class="container">
-
             <br/>
-
-            <h4>NOVA VENDA <button id="novavendadown" class="glyphicon glyphicon-chevron-down blue-icon button-collapse"></button>
-                <button id="novavendaup" class="glyphicon glyphicon-chevron-up blue-icon button-collapse"></button>
-
-            </h4>
-            <hr/>
-
-            <div id="vendas">
-                <f:view>
-                    <h:form id="vendasinput" class="form-horizontal">
-                        <div class="form-group">
-                            <label for="inputClientName" class="col-sm-2 control-label">Cliente</label>
-                            <div class="col-sm-3">
-                                <h:inputText value="#{vendasBean.venda.cod_cliente}" class="form-control" id="inputClientName" />
-                            </div>
-
-                            <label for="inputProductCode" class="col-sm-2 control-label">Cód. Produto</label>
-                            <div class="col-sm-3">
-                                <h:inputText value="#{vendasBean.venda.cod_produto}" class="form-control" id="inputProductCode" />
-                            </div>  
-                        </div>
-
-                        <div class="form-group">
-                            <label for="inputProductValue" class="col-sm-2 control-label">Valor</label>
-                            <div class="col-sm-3">
-                                <h:inputText value="#{vendasBean.venda.valor}" class="form-control" id="inputProductValue" />
-                            </div>
-
-                            <label for="inputSaleCity" class="col-sm-2 control-label">Cidade</label>
-                            <div class="col-sm-3">
-                                <h:inputText value="#{vendasBean.venda.cidade}" class="form-control" id="inputSaleCity" />
-                            </div> 
-                        </div>
-
-                        <div class="form-group">
-                            <label for="inputSaleState" class="col-sm-2 control-label">Estado</label>
-                            <div class="col-sm-3">
-                                <h:inputText value="#{vendasBean.venda.estado}" class="form-control" id="inputSaleState" />
-                            </div>
-
-                            <label for="inputSaleCountry" class="col-sm-2 control-label">País</label>
-                            <div class="col-sm-3">
-                                <h:inputText value="#{vendasBean.venda.pais}" class="form-control" id="inputSaleCountry" />
-                            </div> 
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-sm-offset-2 col-sm-10">
-                                <h:commandLink action="#{vendasBean.salva}" class="btn btn-default">Enviar</h:commandLink>
-                            </div>
-                        </div>
-                    </h:form>
-                </f:view>
-            </div>
-
             <h4>VENDAS</h4>
             <hr/>
 

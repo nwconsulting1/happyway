@@ -3,12 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package modelo;
+package model;
+
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.OneToMany;
 
 /**
  *
@@ -29,6 +37,24 @@ public class Vendas implements Serializable{
     private String pais;
     private String cidade;
     private double valor;
+    
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinTable(name = "VENDA_PRODUTO", joinColumns = {
+        @JoinColumn(name = "VENDA_ID", referencedColumnName = "cod_venda")}, inverseJoinColumns = {
+        @JoinColumn(name = "PRODUTO_ID", referencedColumnName = "codigo")})
+    private final List<Produto> produtos;
+
+    public List<Produto> getProdutos() {
+        return produtos;
+    }
+    
+    public void adicionaProduto(Produto p){
+        this.produtos.add(p);
+    }
+    
+    public void removeProduto(Produto p){
+        this.produtos.remove(p);
+    }
 
     public int getCod_venda() {
         return cod_venda;
@@ -94,7 +120,9 @@ public class Vendas implements Serializable{
         this.valor = valor;
     }
     
-    public Vendas(){}
+    public Vendas(){
+        this.produtos = new ArrayList();
+    }
 
     
     
