@@ -20,7 +20,7 @@ public class Produto implements Serializable {
     //Atributos
     @Id
     @GeneratedValue
-    private int codigo;
+    private Long codigo;
     private String nome;
     private int quantidade;
     private String descricao;
@@ -31,11 +31,11 @@ public class Produto implements Serializable {
     public Produto() {
     }
 
-    public int getCodigo() {
+    public Long getCodigo() {
         return codigo;
     }
 
-    public void setCodigo(int codigo) {
+    public void setCodigo(Long codigo) {
         this.codigo = codigo;
     }
 

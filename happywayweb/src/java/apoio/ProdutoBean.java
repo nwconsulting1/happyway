@@ -54,11 +54,12 @@ public class ProdutoBean {
     
     public List<Produto> getProdutos() {
         
+        if(this.produtos == null){
             EntityManager em = JPAUtil.getEntityManager();
             Query p = em.createQuery("select p from Produto p");
             this.produtos = p.getResultList();
-            //em.close();
-        
+            em.close();
+        }
         
         return this.produtos;
     }
@@ -95,7 +96,7 @@ public class ProdutoBean {
     
     public void excluir(Produto p) {
 
-        Integer cod = p.getCodigo();
+        Long cod = p.getCodigo();
         
         if (cod != null) {
             EntityManager em = JPAUtil.getEntityManager();

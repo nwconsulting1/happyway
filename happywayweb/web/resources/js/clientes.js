@@ -14,20 +14,20 @@ $(document).ready(function(){
         
     });
 
-    $("#clientes").hide();
+    $("#clientesPF").hide();
     $("#novaclienteup").hide();
     //$("#inputClientesPF").hide();
     //$("#inputClientesPJ").hide();
 
     $("#novaclientedown").click(function(){
-    	$('#clientes').slideDown();
+    	$('#clientesPF').slideDown();
     	$("#novaclienteup").show();
     	$("#novaclientedown").hide();
 
     });
 
     $("#novaclienteup").click(function(){
-    	$('#clientes').slideUp();
+    	$('#clientesPF').slideUp();
     	$("#novaclientedown").show();
     	$("#novaclienteup").hide();
     });

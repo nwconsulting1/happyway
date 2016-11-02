@@ -27,7 +27,6 @@ public class ClientePFBean {
     private List<ClientePF> clientesPF = new ArrayList<>();
     
     public ClientePFBean(){
-        clientePF.setCodigo(null);
     }
     
     public ClientePF getClientePF(){
@@ -43,10 +42,10 @@ public class ClientePFBean {
             EntityManager em = JPAUtil.getEntityManager();
             Query q = em.createQuery("select c from ClientePF c", ClientePF.class);
             this.clientesPF = q.getResultList();
-            em.close();
+            //em.close();
         
         
-        return clientesPF;
+        return this.clientesPF;
     }
     
     public String salva() {
@@ -71,12 +70,12 @@ public class ClientePFBean {
         }
 
         this.clientePF = new ClientePF();
-        return "clientes";
+        return "clientespf";
     }
     
     public String alterar(ClientePF cpf) {
         this.clientePF = cpf;
-        return "clientes";
+        return "clientespf";
     }
     
     public void excluir(ClientePF cpf) {
