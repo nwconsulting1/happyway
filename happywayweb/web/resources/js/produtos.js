@@ -10,6 +10,17 @@ $(document).ready(function(){
         responsive: true
         
     });
+    
+    $("table[id$='produtoDataTableModal']").DataTable({
+        paging: true,
+        ordering: false,
+        scrollX: false,
+        scrollY: false,
+        responsive: true,
+        pageLength: 5,
+        bLengthChange: false
+        
+    });
         
     var produto = $("input[id$='inputProductCode'").val();
     

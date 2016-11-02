@@ -28,8 +28,6 @@ public class Campanha implements Serializable {
     private Date data_fim;
     private String nome;
     private String descricao;
-    private Long produto;
-    private Currency valor;
     private Boolean isActive;
     
     public Campanha(){}
@@ -74,21 +72,6 @@ public class Campanha implements Serializable {
         this.descricao = descricao;
     }
 
-    public Long getProduto() {
-        return produto;
-    }
-
-    public void setProduto(Long produto) {
-        this.produto = produto;
-    }
-
-    public Currency getValor() {
-        return valor;
-    }
-
-    public void setValor(Currency valor) {
-        this.valor = valor;
-    }
 
     public Boolean getIsActive() {
         return isActive;
@@ -97,8 +80,5 @@ public class Campanha implements Serializable {
     public void setIsActive(Boolean isActive) {
         this.isActive = isActive;
     }
-    
-    
-    
     
 }

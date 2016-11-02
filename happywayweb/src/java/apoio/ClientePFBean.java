@@ -27,6 +27,7 @@ public class ClientePFBean {
     private List<ClientePF> clientesPF = new ArrayList<>();
     
     public ClientePFBean(){
+        clientePF.setCodigo(null);
     }
     
     public ClientePF getClientePF(){
@@ -40,7 +41,7 @@ public class ClientePFBean {
     public List<ClientePF> getClientesPF() {
         
             EntityManager em = JPAUtil.getEntityManager();
-            Query q = em.createQuery("select c from ClientePF c");
+            Query q = em.createQuery("select c from ClientePF c", ClientePF.class);
             this.clientesPF = q.getResultList();
             em.close();
         
@@ -54,7 +55,7 @@ public class ClientePFBean {
         try {
             // Inicia uma transação com o banco de dados.
             em.getTransaction().begin();
-            ClientePF cpf = em.find(ClientePF.class, clientePF.getCPF());
+            ClientePF cpf = em.find(ClientePF.class, clientePF.getCodigo());
             // Verifica se a pessoa ainda não está salva no banco de dados.
             if (cpf != null) {
                 //Atualiza os dados da pessoa.
@@ -70,22 +71,22 @@ public class ClientePFBean {
         }
 
         this.clientePF = new ClientePF();
-        return "clientePF";
+        return "clientes";
     }
     
     public String alterar(ClientePF cpf) {
         this.clientePF = cpf;
-        return "clientePF";
+        return "clientes";
     }
     
     public void excluir(ClientePF cpf) {
 
-        String cod = cpf.getCPF();
+        Long cod = cpf.getCodigo();
         
         if (cod != null) {
             EntityManager em = JPAUtil.getEntityManager();
 
-            System.out.println(cpf.getCPF());
+            System.out.println(cpf.getCodigo());
             em.getTransaction().begin();
             cpf = em.merge(cpf);
             em.remove(cpf);

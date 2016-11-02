@@ -11,6 +11,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
+import model.Produto;
 import model.Vendas;
 
 /**
@@ -23,8 +24,11 @@ import model.Vendas;
 public class VendasBean {
     
     private Vendas venda = new Vendas();
-    private List<Vendas> vendas = new ArrayList<>();
+    private List<Vendas> vendas;
+    
     private long total;
+    
+    private List<Produto> prods;
     
     public long getTotal() {
         
@@ -106,5 +110,17 @@ public class VendasBean {
 
         this.venda = new Vendas();
 
+    }
+    
+    public List<Produto> getProds() {
+        return prods;
+    }
+
+    public void setProds(List<Produto> prods) {
+        this.prods = prods;
+    }
+    
+    public List<Produto> getProdutos(){
+        return this.venda.getProdutos();
     }
 }

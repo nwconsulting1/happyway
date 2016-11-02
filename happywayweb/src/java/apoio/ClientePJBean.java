@@ -42,7 +42,7 @@ public class ClientePJBean {
     public List<ClientePJ> getClientesPJ() {
         
             EntityManager em = JPAUtil.getEntityManager();
-            Query p = em.createQuery("select cpj from ClientePJ pj");
+            Query p = em.createQuery("select pj from ClientePJ pj", ClientePJ.class);
             this.clientesPJ = p.getResultList();
             //em.close();
         

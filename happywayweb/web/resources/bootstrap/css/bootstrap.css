@@ -244,6 +244,7 @@ th {
   }
   thead {
     display: table-header-group;
+    width: 100%;
   }
   tr,
   img {
@@ -5878,8 +5879,7 @@ button.list-group-item-danger.active:focus {
   font-size: 21px;
   font-weight: bold;
   line-height: 1;
-  color: #000;
-  text-shadow: 0 1px 0 #fff;
+  color: #ddd;
   filter: alpha(opacity=20);
   opacity: .2;
 }
@@ -5939,11 +5939,11 @@ button.close {
 }
 .modal-content {
   position: relative;
-  background-color: #fff;
+  background-color: #000 !important;
   -webkit-background-clip: padding-box;
           background-clip: padding-box;
-  border: 1px solid #999;
-  border: 1px solid rgba(0, 0, 0, .2);
+  border: 1px solid #191919;
+  /*border: 1px solid rgba(0, 0, 0, .2);*/
   border-radius: 6px;
   outline: 0;
   -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
@@ -5968,7 +5968,8 @@ button.close {
 }
 .modal-header {
   padding: 15px;
-  border-bottom: 1px solid #e5e5e5;
+  background: #000;
+  border-bottom: 1px solid #191919;
 }
 .modal-header .close {
   margin-top: -2px;
@@ -5984,7 +5985,7 @@ button.close {
 .modal-footer {
   padding: 15px;
   text-align: right;
-  border-top: 1px solid #e5e5e5;
+  border-top: 1px solid #191919;
 }
 .modal-footer .btn + .btn {
   margin-bottom: 0;

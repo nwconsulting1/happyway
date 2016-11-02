@@ -17,6 +17,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 /**
  *
@@ -32,7 +33,6 @@ public class Vendas implements Serializable{
     private int cod_venda;
     private int cod_cliente;
     private String usuario;
-    private int cod_produto;
     private String estado;
     private String pais;
     private String cidade;
@@ -43,6 +43,32 @@ public class Vendas implements Serializable{
         @JoinColumn(name = "VENDA_ID", referencedColumnName = "cod_venda")}, inverseJoinColumns = {
         @JoinColumn(name = "PRODUTO_ID", referencedColumnName = "codigo")})
     private final List<Produto> produtos;
+    
+    private ClientePF pf;
+
+    public ClientePF getPf() {
+        return pf;
+    }
+
+    public void setPf(ClientePF pf) {
+        this.pf = pf;
+    }
+    
+    /*@OneToOne(cascade=CascadeType.ALL,fetch = FetchType.EAGER)
+    @JoinColumn(name = "codigo")
+    private final ClientePF pf;
+    
+    @OneToOne(cascade=CascadeType.ALL,fetch = FetchType.EAGER)
+    @JoinColumn(name = "codigo")
+    private final ClientePJ pj;
+
+    public ClientePF getPf() {
+        return pf;
+    }
+
+    public ClientePJ getPj() {
+        return pj;
+    }*/
 
     public List<Produto> getProdutos() {
         return produtos;
@@ -80,14 +106,6 @@ public class Vendas implements Serializable{
         this.usuario = usuario;
     }
 
-    public int getCod_produto() {
-        return cod_produto;
-    }
-
-    public void setCod_produto(int cod_produto) {
-        this.cod_produto = cod_produto;
-    }
-
     public String getEstado() {
         return estado;
     }
@@ -122,6 +140,8 @@ public class Vendas implements Serializable{
     
     public Vendas(){
         this.produtos = new ArrayList();
+        /*this.pf = new ClientePF();
+        this.pj = new ClientePJ();*/
     }
 
     

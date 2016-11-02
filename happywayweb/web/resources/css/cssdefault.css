@@ -69,6 +69,15 @@ hr{
      width: 97%;
  }
  
+ .width-97percent{
+     width: 97%;
+ }
+ 
+ datatable{
+     width: 100%;
+ }
+
+ 
   @media (min-width: 768px) {
   #content{
   	width: 90%;

@@ -6,6 +6,7 @@
 package model;
 
 import java.io.Serializable;
+import java.util.Objects;
 import java.util.Scanner;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -20,12 +21,10 @@ import javax.persistence.InheritanceType;
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 public abstract class Cliente implements Serializable {
-
-    //Scanner input = new Scanner(System.in);
     
     @Id
     @GeneratedValue
-    private int codigo;
+    private Long codigo;
     private String nome;
     private String data_cadastro;
     private String estado;
@@ -36,16 +35,12 @@ public abstract class Cliente implements Serializable {
     private String pais;
     private String endereco;
 
-//Construtor
-    public Cliente() {
 
-    }
-
-    public int getCodigo() {
+    public Long getCodigo() {
         return codigo;
     }
 
-    public void setCodigo(int codigo) {
+    public void setCodigo(Long codigo) {
         this.codigo = codigo;
     }
 
@@ -117,8 +112,33 @@ public abstract class Cliente implements Serializable {
         return endereco;
     }
 
-    //Atributos
     public void setEndereco(String endereco) {
         this.endereco = endereco;
+    }
+    
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 11 * hash + Objects.hashCode(this.codigo);
+        hash = 11 * hash + Objects.hashCode(this.nome);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Cliente other = (Cliente) obj;
+        if (!Objects.equals(this.nome, other.nome)) {
+            return false;
+        }
+        return Objects.equals(this.codigo, other.codigo);
     }
 }
