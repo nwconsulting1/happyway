@@ -11,6 +11,14 @@ $(document).ready(function(){
         scrollX: false,
         responsive: true
     });
+    
+    $("table[id$='vendaDataTableHome']").DataTable({
+        paging: true,
+        ordering:  false,
+        scrollX: false,
+        pageLength: 5,
+        bLengthChange: false
+    });
 
     //$("#vendas").hide();
     $("#novavendaup").hide();

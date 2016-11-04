@@ -19,7 +19,7 @@ import javax.persistence.InheritanceType;
  * @author Lucas de Andrade
  */
 @Entity
-//@Inheritance(strategy = InheritanceType.JOINED)
+@Inheritance(strategy = InheritanceType.JOINED)
 public abstract class Cliente implements Serializable {
     
     @Id

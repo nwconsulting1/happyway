@@ -10,6 +10,7 @@ import java.util.Date;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Entity;
+import javax.persistence.Temporal;
 
 /**
  *
@@ -23,8 +24,12 @@ public class Campanha implements Serializable {
     @GeneratedValue
     private Long id;
     
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date data_inicio;
+    
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date data_fim;
+    
     private String nome;
     private String descricao;
     private Boolean isActive;

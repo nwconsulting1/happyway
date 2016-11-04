@@ -23,13 +23,13 @@ import model.Campanha;
 public class CampanhaBean {
     
     private Campanha campanha = new Campanha();
-    private List<Campanha> campanhas;
+    private List<Campanha> campanhas = new ArrayList<>();
     private long total;
     
     public long getTotal() {
     
         EntityManager em = JPAUtil.getEntityManager();
-        Query p = em.createQuery("select count(c) from Campanha c");
+        Query p = em.createQuery("select count(c) from Campanha c", Campanha.class);
         this.total = (long)p.getSingleResult();
         
         return this.total;
@@ -51,7 +51,7 @@ public class CampanhaBean {
     public List<Campanha> getCampanhas() {
         
             EntityManager em = JPAUtil.getEntityManager();
-            Query c = em.createQuery("select c from Campanha c");
+            Query c = em.createQuery("select c from Campanha c", Campanha.class);
             this.campanhas = c.getResultList();
             //em.close();
         
@@ -64,7 +64,14 @@ public class CampanhaBean {
         EntityManager em = JPAUtil.getEntityManager();
         try {
             // Inicia uma transação com o banco de dados.
-            Campanha c = em.find(Campanha.class, campanha.getId());
+            
+            Campanha c = new Campanha();
+            
+            if(campanha.getId() != null){
+            
+            c = em.find(Campanha.class, campanha.getId());
+            
+            }
             // Verifica se a pessoa ainda não está salva no banco de dados.
             if (c != null) {
                 //Atualiza os dados da pessoa.
@@ -80,12 +87,12 @@ public class CampanhaBean {
         }
 
         this.campanha = new Campanha();
-        return "campanhas";
+        return "campanha";
     }
     
     public String alterar(Campanha c) {
         this.campanha = c;
-        return "campanhas";
+        return "campanha";
     }
     
     public void excluir(Campanha c) {

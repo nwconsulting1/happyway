@@ -16,7 +16,6 @@ $(document).ready(function(){
         ordering: false,
         scrollX: false,
         scrollY: false,
-        responsive: true,
         pageLength: 5,
         bLengthChange: false
         
