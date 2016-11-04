@@ -54,12 +54,12 @@ public class ProdutoBean {
     
     public List<Produto> getProdutos() {
         
-        if(this.produtos == null){
+        /*if(this.produtos == null){*/
             EntityManager em = JPAUtil.getEntityManager();
             Query p = em.createQuery("select p from Produto p");
             this.produtos = p.getResultList();
             em.close();
-        }
+       /* }*/
         
         return this.produtos;
     }
@@ -70,7 +70,14 @@ public class ProdutoBean {
         try {
             // Inicia uma transação com o banco de dados.
             em.getTransaction().begin();
-            Produto p = em.find(Produto.class, produto.getCodigo());
+            
+            Produto p = new Produto();
+            
+            if(produto.getCodigo() != null){
+            
+            p = em.find(Produto.class, produto.getCodigo());
+            
+            }
             // Verifica se a pessoa ainda não está salva no banco de dados.
             if (p != null) {
                 //Atualiza os dados da pessoa.

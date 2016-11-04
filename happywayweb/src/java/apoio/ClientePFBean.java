@@ -54,7 +54,14 @@ public class ClientePFBean {
         try {
             // Inicia uma transação com o banco de dados.
             em.getTransaction().begin();
-            ClientePF cpf = em.find(ClientePF.class, clientePF.getCodigo());
+            
+            ClientePF cpf = new ClientePF();
+            
+            if(clientePF.getCodigo() != null){
+            
+            cpf = em.find(ClientePF.class, clientePF.getCodigo());
+            
+            }
             // Verifica se a pessoa ainda não está salva no banco de dados.
             if (cpf != null) {
                 //Atualiza os dados da pessoa.

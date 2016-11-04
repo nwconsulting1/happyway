@@ -20,17 +20,17 @@ public class Usuario implements Serializable {
     
     @Id
     @GeneratedValue
-    private String id;
+    private Long id;
     
     private String usuario;
     private String senha;
     private String email;
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

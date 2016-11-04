@@ -28,7 +28,7 @@ public class VendasBean {
     
     private long total;
     
-    private List<Produto> prods;
+    private List<Produto> produtos;
     
     public long getTotal() {
         
@@ -112,15 +112,15 @@ public class VendasBean {
 
     }
     
-    public List<Produto> getProds() {
-        return prods;
+    public List<Produto> getProdutos() {
+        return produtos;
     }
 
-    public void setProds(List<Produto> prods) {
-        this.prods = prods;
+    public void setProdutos(List<Produto> produtos) {
+        this.produtos = produtos;
     }
     
-    public List<Produto> getProdutos(){
+    public List<Produto> getProdutosVenda(){
         return this.venda.getProdutos();
     }
 }

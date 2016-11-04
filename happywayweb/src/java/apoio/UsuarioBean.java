@@ -51,9 +51,16 @@ public class UsuarioBean {
 
         EntityManager em = JPAUtil.getEntityManager();
         try {
+            
+            Usuario u = new Usuario();
             // Inicia uma transação com o banco de dados.
             em.getTransaction().begin();
-            Usuario u = em.find(Usuario.class, usuario.getId());
+            
+            if(usuario.getId() != null){
+            
+            u = em.find(Usuario.class, usuario.getId());
+            
+            }
             // Verifica se a pessoa ainda não está salva no banco de dados.
             if (u != null) {
                 //Atualiza os dados da pessoa.
@@ -79,7 +86,7 @@ public class UsuarioBean {
 
     public void excluir(Usuario u) {
 
-        String cod = u.getId();
+        Long cod = u.getId();
 
         if (cod != null) {
             EntityManager em = JPAUtil.getEntityManager();

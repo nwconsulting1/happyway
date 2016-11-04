@@ -13,6 +13,17 @@ $(document).ready(function(){
         responsive: true
         
     });
+    
+    $("table[id$='clientePFdataTableModal']").DataTable({
+        paging: true,
+        ordering: false,
+        scrollX: false,
+        scrollY: false,
+        responsive: true,
+        pageLength: 5,
+        bLengthChange: false
+        
+    });
 
     $("#clientesPF").hide();
     $("#novaclienteup").hide();

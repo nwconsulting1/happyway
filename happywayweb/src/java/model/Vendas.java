@@ -84,6 +84,11 @@ public class Vendas implements Serializable{
     public void removeProduto(Produto p){
         this.produtos.remove(p);
     }
+    
+    public void relacionaPF(ClientePF cpf){
+        this.pf = cpf;
+    }
+    
 
     public int getCod_venda() {
         return cod_venda;
