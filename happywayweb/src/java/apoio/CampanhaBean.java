@@ -23,7 +23,7 @@ import model.Campanha;
 public class CampanhaBean {
     
     private Campanha campanha = new Campanha();
-    private List<Campanha> campanhas = new ArrayList<>();
+    private List<Campanha> campanhas;
     private long total;
     
     public long getTotal() {

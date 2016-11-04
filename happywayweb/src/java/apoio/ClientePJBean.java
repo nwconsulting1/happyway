@@ -56,7 +56,14 @@ public class ClientePJBean {
         try {
             // Inicia uma transação com o banco de dados.
             em.getTransaction().begin();
-            ClientePJ cpj = em.find(ClientePJ.class, clientePJ.getCNPJ());
+            
+            ClientePJ cpj = new ClientePJ();
+            
+            if(clientePJ.getCodigo() != null){
+            
+            cpj = em.find(ClientePJ.class, clientePJ.getCodigo());
+            
+            }
             // Verifica se a pessoa ainda não está salva no banco de dados.
             if (cpj != null) {
                 //Atualiza os dados da pessoa.
@@ -82,12 +89,12 @@ public class ClientePJBean {
     
     public void excluir(ClientePJ cpj) {
 
-        String cod = cpj.getCNPJ();
+        Long cod = cpj.getCodigo();
         
         if (cod != null) {
             EntityManager em = JPAUtil.getEntityManager();
 
-            System.out.println(cpj.getCNPJ());
+            System.out.println(cpj.getCodigo());
             em.getTransaction().begin();
             cpj = em.merge(cpj);
             em.remove(cpj);

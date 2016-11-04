@@ -4,8 +4,8 @@
 
 $(document).ready(function(){
  	console.log('entrou no script');
-        
-        $("table[id$='clientePFdataTable']").DataTable({
+                
+        $("table[id$='clientePJdataTable']").DataTable({
         paging: true,
         ordering: false,
         scrollX: false,
@@ -14,7 +14,7 @@ $(document).ready(function(){
         
     });
     
-    $("table[id$='clientePFdataTableModal']").DataTable({
+    $("table[id$='clientePJdataTableModal']").DataTable({
         paging: true,
         ordering: false,
         scrollX: false,
@@ -25,25 +25,30 @@ $(document).ready(function(){
         
     });
 
-    $("#clientesPF").hide();
+    $("#clientesPJ").hide();
     $("#novaclienteup").hide();
     //$("#inputClientesPF").hide();
     //$("#inputClientesPJ").hide();
 
     $("#novaclientedown").click(function(){
-    	$('#clientesPF').slideDown();
+    	$('#clientesPJ').slideDown();
     	$("#novaclienteup").show();
     	$("#novaclientedown").hide();
 
     });
 
     $("#novaclienteup").click(function(){
-    	$('#clientesPF').slideUp();
+    	$('#clientesPJ').slideUp();
     	$("#novaclientedown").show();
     	$("#novaclienteup").hide();
     });
 
-    $("button[id$=clientePF]").click(function(){
-        $("#inputClientesPF").slideDown();
+    $("button[id$=clientePJ]").click(function(){
+        $("#inputClientesPJ").slideDown();
+    });
+    
+   $(function() {
+        $.mask.addPlaceholder("~", "[+-]");
+        $("#inputClientPhone").mask("(99) 9999-9999");
     });
 });

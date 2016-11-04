@@ -6,7 +6,8 @@
 package model;
 
 import java.io.Serializable;
-import javax.persistence.Id;
+import javax.persistence.Entity;
+import java.util.List;
 
 /**
  *
