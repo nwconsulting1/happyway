@@ -69,7 +69,14 @@ public class VendasBean {
         try {
             // Inicia uma transação com o banco de dados.
             em.getTransaction().begin();
-            Vendas v = em.find(Vendas.class, venda.getCod_venda());
+            
+            Vendas v = new Vendas();
+            
+            if(venda.getCod_venda() != null){
+            
+            v = em.find(Vendas.class, venda.getCod_venda());
+            
+            }
             // Verifica se a pessoa ainda não está salva no banco de dados.
             if (v != null) {
                 //Atualiza os dados da pessoa.
@@ -90,12 +97,12 @@ public class VendasBean {
     
     public String alterar(Vendas v) {
         this.venda = v;
-        return "vendas";
+        return "vendaswizard";
     }
     
     public void excluir(Vendas v) {
 
-        Integer cod = v.getCod_venda();
+        Long cod = v.getCod_venda();
         
         if (cod != null) {
             EntityManager em = JPAUtil.getEntityManager();

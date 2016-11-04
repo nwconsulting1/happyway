@@ -31,7 +31,7 @@ public class Vendas implements Serializable{
     //Atributos
     @Id
     @GeneratedValue
-    private int cod_venda;
+    private Long cod_venda;
     private int cod_cliente;
     private String usuario;
     private String estado;
@@ -90,11 +90,11 @@ public class Vendas implements Serializable{
     }
     
 
-    public int getCod_venda() {
+    public Long getCod_venda() {
         return cod_venda;
     }
 
-    public void setCod_venda(int cod_venda) {
+    public void setCod_venda(Long cod_venda) {
         this.cod_venda = cod_venda;
     }
 
