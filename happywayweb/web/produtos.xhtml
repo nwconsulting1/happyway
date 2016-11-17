@@ -50,7 +50,7 @@
                             <li><a href="vendaswizard.xhtml">Nova</a></li>
                         </ul>
                     </li>
-                    <li><a href="campanha.xhtml">Campanha</a></li>
+                    <!--<li><a href="campanha.xhtml">Campanha</a></li>-->
                     <li><a href="usuarios.xhtml">Usuários</a></li>
                 </ul>
 
@@ -73,16 +73,17 @@
 
                 <f:view>
                     <h:form id="produtosinput" class="form-horizontal">
+                        <h:messages styleClass="alert alert-danger" id="messages" />
 
                         <div class="form-group disableScroll">
                             <label for="inputProductName" class="col-sm-2 control-label disableScroll">Nome</label>
                             <div class="col-sm-3">
-                                <h:inputText value="#{produtoBean.produto.nome}" class="form-control" id="inputProductName"/>
+                                <h:inputText value="#{produtoBean.produto.nome}" required="true" requiredMessage="Nome obrigatório" class="form-control" id="inputProductName"/>
                             </div>
 
                             <label for="inputProductQtd" class="col-sm-2 control-label">Quantidade</label>
                             <div class="col-sm-3">
-                                <h:inputText value="#{produtoBean.produto.quantidade}" class="form-control" id="inputProductQtd" />
+                                <h:inputText value="#{produtoBean.produto.quantidade}" required="true" requiredMessage="Quantidade obrigatória"  class="form-control" id="inputProductQtd" />
                             </div>  
                         </div>
 
@@ -90,12 +91,12 @@
 
                             <label for="inputProductFaixa" class="col-sm-2 control-label">Faixa Etária</label>
                             <div class="col-sm-3">
-                                <h:inputText value="#{produtoBean.produto.faixa_etaria}" class="form-control" id="inputProductFaixa" />
+                                <h:inputText value="#{produtoBean.produto.faixa_etaria}" required="true" requiredMessage="Faixa etária obrigatória" class="form-control" id="inputProductFaixa" />
                             </div> 
                             
                             <label for="inputProductCategory" class="col-sm-2 control-label">Categoria</label>
                             <div class="col-sm-3 disableScroll">
-                                <h:inputText value="#{produtoBean.produto.categoria}" class="form-control" id="inputProductCategory" />
+                                <h:inputText value="#{produtoBean.produto.categoria}" required="true" requiredMessage="Categoria obrigatória" class="form-control" id="inputProductCategory" />
                             </div>
                         </div>
 
@@ -103,12 +104,12 @@
 
                             <label for="inputProductValue" class="col-sm-2 control-label">Valor</label>
                             <div class="col-sm-3">
-                                <h:inputText value="#{produtoBean.produto.valor}" class="form-control" id="inputProductValue" />
+                                <h:inputText value="#{produtoBean.produto.valor}" required="true" requiredMessage="Valor obrigatório" class="form-control" id="inputProductValue" />
                             </div>
                             
                             <label for="inputProductCode" class="col-sm-2 control-label">Código</label>
                             <div class="col-sm-3">
-                                <h:inputText disabled="true" value="#{produtoBean.produto.codigo}" class="form-control" id="inputProductCode" />
+                                <h:inputText disabled="true" readonly="true" value="#{produtoBean.produto.codigo}" class="form-control" id="inputProductCode" />
                             </div>
                             
                         </div>

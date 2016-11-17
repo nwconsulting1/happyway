@@ -27,6 +27,21 @@ public class ClientePJBean {
     
     private ClientePJ clientePJ = new ClientePJ();
     private List<ClientePJ> clientesPJ = new ArrayList<>();
+    private long total;
+
+
+    public long getTotal() {
+        
+        EntityManager em = JPAUtil.getEntityManager();
+        Query p = em.createQuery("select count(pj) from ClientePJ pj");
+        this.total = (long)p.getSingleResult();
+        
+        return this.total;
+    }
+
+    public void setTotal(int total) {
+        this.total = total;
+    }
     
     public ClientePJBean(){
     }

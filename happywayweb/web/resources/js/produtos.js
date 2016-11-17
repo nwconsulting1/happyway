@@ -21,11 +21,12 @@ $(document).ready(function(){
         
     });
         
-    var produto = $("input[id$='inputProductCode'").val();
+    var produto = $("input[id$='inputProductCode']").val();
+    var produtonome = $("input[id$='inputProductName']").val();
+    console.log($("input[id$='inputProductName']").val() );
+    console.log($("input[id$='inputProductCode']").val() );
     
-    console.log($("input[id$='inputProductCode'").val() );
-    
-    if(produto != null && produto != 'undefined' && produto != 0){
+    if((produto != null && produto != 'undefined' && produto != 0) || (produtonome != null && produtonome != 'undefined' && produtonome != '')){
         $("#produtos").slideDown();
         $("#novoprodutoup").show();
         $("#novoprodutodown").hide();

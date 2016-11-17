@@ -8,8 +8,10 @@ package apoio;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 import model.Produto;
@@ -72,6 +74,16 @@ public class ProdutoBean {
             em.getTransaction().begin();
             
             Produto p = new Produto();
+            
+            if(produto.getQuantidade() == 0){
+                FacesContext.getCurrentInstance().addMessage("produtosinput", new FacesMessage("Quantidade deve sair maior que zero!"));
+                return null;
+            }
+            
+            if(produto.getValor() == 0){
+                FacesContext.getCurrentInstance().addMessage("produtosinput", new FacesMessage("Valor deve sair maior que zero!"));
+                return null;
+            }
             
             if(produto.getCodigo() != null){
             

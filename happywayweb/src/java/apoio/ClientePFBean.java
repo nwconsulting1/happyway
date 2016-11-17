@@ -25,6 +25,21 @@ public class ClientePFBean {
     
     private ClientePF clientePF = new ClientePF();
     private List<ClientePF> clientesPF = new ArrayList<>();
+    private long total;
+
+
+    public long getTotal() {
+        
+        EntityManager em = JPAUtil.getEntityManager();
+        Query p = em.createQuery("select count(c) from ClientePF c");
+        this.total = (long)p.getSingleResult();
+        
+        return this.total;
+    }
+
+    public void setTotal(int total) {
+        this.total = total;
+    }
     
     public ClientePFBean(){
     }

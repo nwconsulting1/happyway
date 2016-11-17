@@ -139,6 +139,11 @@ public class Vendas implements Serializable{
     }
 
     public double getValor() {
+        
+        for(int i = 0; i < this.produtos.size(); i++){
+            this.valor += produtos.get(i).getValor();
+        }
+        
         return valor;
     }
 
